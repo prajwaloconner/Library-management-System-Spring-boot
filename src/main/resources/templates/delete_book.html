@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Return Book</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+
+</head>
+<body>
+<h2 align="center">Delete a Book</h2>
+<form th:action="@{/delete}" method="post">
+    <label for="book">Select Borrower Name:</label>
+    <select id="book" name="title">
+        <option th:each="book : ${books}"
+                th:value="${book.title}"
+                th:text="${book.title}">Book Title</option>
+    </select><br/>
+
+    <button type="submit">Delete</button>
+    <a href="/">Home</a>
+</form>
+
+</body>
